@@ -10,6 +10,13 @@ const Shop = () => {
         .then(res =>res.json())
         .then(data =>setProducts(data))
     },[])
+
+    // TODO:add event handler:
+    const [cart,setCart]=useState([])
+    const handleAddToCart =(product)=>{
+        const newCart=[...cart,product];
+        setCart(newCart);    
+    }
     return (
         
         <div className='shop-container'>
@@ -18,11 +25,14 @@ const Shop = () => {
                     products.map(product =><Product
                     key={product.id}
                     product={product}
+                    handleAddToCart={handleAddToCart}
                     ></Product>)
                 }
             </div>
             <div className='cart-container'>
-                <Cart></Cart>
+                <Cart
+                cart={cart} 
+                ></Cart>
             </div>
         </div>
     );
