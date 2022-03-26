@@ -8,3 +8,9 @@
     color: rgb(0, 0, 0);
     font-size: 30px;
 }
+
+@media screen and (max-width:600px) {
+    .header{
+        font-size: 22px;
+    }
+}
