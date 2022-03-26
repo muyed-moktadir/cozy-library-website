@@ -13,9 +13,15 @@ const Shop = () => {
 
     // TODO:add event handler:
     const [cart,setCart]=useState([])
-    const handleAddToCart =(product)=>{
-        const newCart=[...cart,product];
-        setCart(newCart);    
+    const handleAddToCart =(selectedProduct)=>{
+        const existsBook=cart.find(product=> product.id===selectedProduct.id)
+        if(!existsBook && cart.length<4){
+        const newCart=[...cart,selectedProduct];
+        setCart(newCart);
+       }
+       else {
+           console.log('duplicate not allowed and and also select only 4')
+       }    
     }
     return (
         
@@ -30,9 +36,13 @@ const Shop = () => {
                 }
             </div>
             <div className='cart-container'>
-                <Cart
-                cart={cart} 
-                ></Cart>
+                <h1>Books Summary</h1>
+                    {
+                        cart.map(product=><Cart name={product.name}>
+                            
+                        </Cart>)
+                    }
+            
             </div>
         </div>
     );

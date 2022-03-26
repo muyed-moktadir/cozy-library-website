@@ -1,20 +1,13 @@
+import {faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import './Cart.css'
 
-const Cart = ({cart}) => {
-    console.log(cart);
-    let name;
-    //let newName=[];
-    for (const product of cart){
-        name=product.name;
-        
-    }
-
-
-
+const Cart = ({name}) => {
     return (
-        <div>
-            <h1>Books Summary</h1>
-            <h3>Author's Name: {name}</h3>
+        <div className='cart'>
+            <h3>author's name :{name}</h3>
+            <FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon>
         </div>
     );
 };
