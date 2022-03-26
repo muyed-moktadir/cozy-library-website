@@ -1,6 +1,6 @@
 # The Cozy Library
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created by react,html and [Create the cuzy library](https://the-cuzy-library.netlify.app/).
 
 ## Available Scripts
 

@@ -33,8 +33,9 @@ const Shop = () => {
         }
 
     // TODO:choose only one book:
-    let onlyOneBook=[];
+    
     const chooseOneForme=()=>{
+        let onlyOneBook=[];
         onlyOneBook=[chooseOne[Math.floor(Math.random() * chooseOne.length)]];
         setChooseOne(onlyOneBook);
         console.log(onlyOneBook)
@@ -60,7 +61,7 @@ const Shop = () => {
 
                         </Cart>)
                     }
-                    <button onClick={chooseOneForme} className='choose-btn'><p className='choose-btn-text'>Choose 1 For Me</p></button>
+                    <button onClick={()=>chooseOneForme()} className='choose-btn'><p className='choose-btn-text'>Choose 1 For Me</p></button>
                     <br /><br />
                     {/* {
                       cart.map(chooseOne=><ChooseOne key={chooseOne.id} name={chooseOne.name}></ChooseOne>)  

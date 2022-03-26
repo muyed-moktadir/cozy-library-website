@@ -4,6 +4,8 @@
     grid-template-columns: 3fr 1.5fr;
     background-color:rgb(245, 236, 231);
     border-radius: 2px;
+    padding-bottom: 40px;
+    padding-top: 40px;
 
 }
 
@@ -11,7 +13,8 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap:45px;
-    margin: 100px 50px;
+    /* margin: 100px 50px; */
+    margin-left: 20px;
     /* background-color:aliceblue; */
     border-radius: 4px;
     /* position: relative; */
@@ -55,13 +58,18 @@
     margin-right: 10px;
     font-weight: 700;
 }
-
-
-
 /* TODO:   responsive  */
 @media screen and (max-width:600px) {
-    .products-container, .shop-container{
+    .products-container{
         grid-template-columns: repeat(1,1fr);
+        justify-items: center;
+        margin: 0%;
+    }
+    .shop-container{
+        grid-template-columns: repeat(1,1fr);
+        height: auto;
+        width: auto;
+        margin: 0%;
     }
 }
 
