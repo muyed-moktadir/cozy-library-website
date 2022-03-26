@@ -7,43 +7,36 @@ import './Shop.css'
 const Shop = () => {
     const [products,setProducts] =useState([])
     const [cart,setCart]=useState([])
-    const [chooseOne,setChooseOne]=useState([])
+    const [chooseOneBook,setChooseOneBook]=useState([])
     useEffect( () =>{
         fetch('products.json')
         .then(res =>res.json())
         .then(data =>setProducts(data))
     },[])
 
-    // TODO:add event handler:
+    // TODO:add add to cart event handler:
+    let newCart=[];
     const handleAddToCart =(selectedProduct)=>{
-        let newCart=[];
         const existsBook=cart.find(product=> product.id===selectedProduct.id)
         if(!existsBook && cart.length<4){
          newCart=[...cart,selectedProduct];
         setCart(newCart);
        }
        else {
-           console.log('duplicate not allowed and and also select only 4')
+           console.log('duplicate not allowed and and select only 4 books')
        }       
     }
-    // TODO: empty card:
+    // TODO: empty card for Choose again:
         const emptyCard =()=>{
             setCart([]);
-            setChooseOne([]);
         }
-
-    // TODO:choose only one book:
-    
+    // TODO:choose only one book:  
     const chooseOneForme=()=>{
         let onlyOneBook=[];
-        onlyOneBook=[chooseOne[Math.floor(Math.random() * chooseOne.length)]];
-        setChooseOne(onlyOneBook);
-        console.log(onlyOneBook)
-
-    }
-     
+         onlyOneBook =[ cart[Math.floor(Math.random() * cart.length===1)]];
+            setChooseOneBook(onlyOneBook);     
+    }  
     return (
-        
         <div className='shop-container'>
             <div className='products-container'>
                 {
@@ -57,16 +50,18 @@ const Shop = () => {
             <div className='cart-container'>
                 <h1>Selected Books</h1>
                     {
-                        cart.map(product=><Cart cart={cart} key={product.id} name={product.name}>
-
+                        cart.map(product=><Cart 
+                        cart={cart} 
+                        key={product.id} 
+                        name={product.name}>
                         </Cart>)
                     }
-                    <button onClick={()=>chooseOneForme()} className='choose-btn'><p className='choose-btn-text'>Choose 1 For Me</p></button>
+                    <button onClick={chooseOneForme} className='choose-btn'><p className='choose-btn-text'>Choose 1 For Me</p></button>
                     <br /><br />
-                    {/* {
-                      cart.map(chooseOne=><ChooseOne key={chooseOne.id} name={chooseOne.name}></ChooseOne>)  
-                    } */}
-                    <button onClick={emptyCard}    className='choose-btn'><p className='choose-btn-text'>Choose Again</p></button>
+                    {
+                      chooseOneBook.map(book=><ChooseOne key={book.id} book={book}></ChooseOne>)
+                    }
+                    <button onClick={emptyCard} className='choose-btn'><p className='choose-btn-text'>Choose Again</p></button>
             
             </div>
             

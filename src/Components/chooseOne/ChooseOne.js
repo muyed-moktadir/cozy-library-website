@@ -1,10 +1,10 @@
 import React from 'react';
 
-const ChooseOne = ({name}) => {
-    console.log(name)
+const ChooseOne = ({book}) => {
+     const{name}=book;
     return (
         <div>
-            <h3>authothors name:{name}</h3>
+            <h3>authors name :{name}</h3>
         </div>
     );
 };
