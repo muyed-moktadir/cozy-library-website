@@ -1,10 +1,10 @@
 import React from 'react';
 
-const ChooseOne = ({book}) => {
-     const{name}=book;
+const ChooseOne = (props) => {
+ const{name}=props.name;    
     return (
         <div>
-            <h3>authors name :{name}</h3>
+            <h3>Author's Name :{name}</h3>
         </div>
     );
 };
