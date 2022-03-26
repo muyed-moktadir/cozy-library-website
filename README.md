@@ -1,6 +1,6 @@
 # The Cozy Library
 
-This project was created by react,html and [Create the cuzy library](https://the-cuzy-library.netlify.app/).
+This project was created by react,css,JS and [website : the cuzy library ](https://the-cuzy-library.netlify.app/).
 
 ## Available Scripts
 
