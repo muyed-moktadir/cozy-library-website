@@ -29,6 +29,8 @@ const Shop = () => {
     // TODO: empty card for Choose again:
         const emptyCard =()=>{
             setCart([]);
+            setChooseOneBook([]);
+
         }
     // TODO:choose only one book:  
     const chooseOneForme=()=>{
