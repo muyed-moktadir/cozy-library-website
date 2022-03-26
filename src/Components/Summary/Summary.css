@@ -1,0 +1,10 @@
+.summary-box{
+    margin-top: 70px;
+    border: 2px solid sandybrown;
+    border-radius: 3px;
+    background-color:rgb(245, 236, 231);
+}
+.summary-box p{
+    font-size: 20px;
+    padding: 10px;
+}

@@ -68,6 +68,7 @@ const Shop = () => {
                     <button onClick={emptyCard}    className='choose-btn'><p className='choose-btn-text'>Choose Again</p></button>
             
             </div>
+            
         </div>
     );
 };
